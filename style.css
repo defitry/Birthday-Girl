@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f9e5e5;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: #e57373;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.envelope .flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 100px solid #f06292;
+  transform-origin: top;
+  animation: openFlap 2s forwards ease;
+  z-index: 3;
+}
+
+.envelope .letter {
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  width: 80%;
+  height: 140px;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  animation: slideUp 2s 1s forwards ease;
+  opacity: 0;
+  z-index: 2;
+}
+
+.letter h1 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  color: #d81b60;
+}
+
+.letter p {
+  margin: 0;
+  font-size: 16px;
+  color: #444;
+}
+
+@keyframes openFlap {
+  to {
+    transform: rotateX(180deg);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
