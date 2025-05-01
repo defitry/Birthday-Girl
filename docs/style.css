@@ -1,0 +1,34 @@
+body {
+    background-color: #f6b2b2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.envelope {
+    position: absolute;
+    bottom: 0;
+    display: block;
+}
+
+.envelope__card {
+    width: 250px;
+    height: 200px;
+    margin: 0 25px;
+    background-color: #f5f6d6;
+    position: relative;
+}
+
+.envelope__card.open {
+    -webkit-animation: cardJump .5s ease .5s forwards;
+    -o-animation: cardJump .5s ease .5s forwards;
+    animation: cardJump .5s ease .5s forwards;
+    z-index: 1;
+}
+
+@keyframes cardJump {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+  }
